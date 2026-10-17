@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMMIE's game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="app">
+
+    <!-- SCREEN 1 — Name entry -->
+    <section id="screen-name" class="screen active">
+      <h1 class="logo">EMMIE<span>'s</span> game</h1>
+      <p class="tagline">40 levels. One AI. Can you beat her?</p>
+
+      <form id="name-form" autocomplete="off" novalidate>
+        <label for="name-input">Your name</label>
+        <input id="name-input" type="text" maxlength="16" placeholder="Type your name..." required>
+        <button type="submit" class="btn primary">Let's play</button>
+      </form>
+    </section>
+
+    <!-- SCREEN 2 — Level select -->
+    <section id="screen-levels" class="screen">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Player</p>
+          <h2 id="player-name">—</h2>
+        </div>
+        <button id="change-name" class="btn ghost" type="button">Change name</button>
+      </header>
+      <p class="hint" id="level-hint"></p>
+      <div id="level-grid" class="level-grid" role="grid" aria-label="Level select"></div>
+    </section>
+
+    <!-- SCREEN 3 — The game -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <button id="back-btn" class="btn ghost" type="button">← Levels</button>
+        <div class="level-badge">
+          <span id="game-level">Level 1</span>
+          <span id="game-diff" class="diff">Easy</span>
+        </div>
+      </header>
+      <p id="status" class="status">Your turn</p>
+      <div id="board" class="board" role="grid" aria-label="Tic-tac-toe board"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
